@@ -19,9 +19,13 @@ Blogpost.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        creator: {
-            type: DataTypes.STRING,
-            allowNull: false
+        user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'User',
+                key: 'id'
+            }
         },
         date_created: {
             type: DataTypes.DATE,
