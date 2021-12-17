@@ -11,13 +11,11 @@ const seedAll = async () => {
     individualHooks: true,
     returning: true,
   });
-  
+
   await Blogpost.bulkCreate(blogData, {
     individualHooks: true,
     returning: true,
   });
-
-
 
   process.exit(0);
 };
