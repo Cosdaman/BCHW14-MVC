@@ -15,6 +15,10 @@ Blogpost.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        content: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         creator: {
             type: DataTypes.STRING,
             allowNull: false
@@ -33,4 +37,4 @@ Blogpost.init(
     }
 );
 
-module.exports = User;
+module.exports = Blogpost;
