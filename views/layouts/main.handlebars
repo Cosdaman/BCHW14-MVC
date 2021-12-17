@@ -22,7 +22,12 @@
       </ul>
 
       <div class="text-end">
+        {{#if loggedIn}}
+        <button id="logout" class="btn-no-style">Logout</button>
+        {{else}}
         <a href="/login"><button type="button" class="btn btn-outline-light me-2">Login / Sign Up</button></a>
+        {{/if}}
+
       </div>
     </div>
   </div>
