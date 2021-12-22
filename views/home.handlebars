@@ -1,3 +1,5 @@
-<div>
-home
-</div>
+  <section class="container flex-row justify-center">
+    {{#each dbBlogData as |blogPost|}}
+    {{> blog-post-details}}
+    {{/each}}
+  </section>

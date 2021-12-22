@@ -4,5 +4,11 @@
     "content": "test@test.com",
     "user_id": 1,
     "date_created": "March 30, 2018"
+  },
+  {
+    "title": "test2",
+    "content": "test2@test.com",
+    "user_id": 1,
+    "date_created": "March 30, 2019"
   }
 ]
