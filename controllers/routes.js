@@ -40,11 +40,20 @@ router.get('/login', async (req, res) => {
 //get single blog
 router.get('/blog/:id', withAuth, async (req, res) => {
   try {
-    const dbBlogData = await Blogpost.findByPk(req.params.id);
-
-    const Blog = dbBlogData.get({ plain: true });
-
-    res.render('blog', { Blog, logged_in: req.session.logged_in });
+    const dbBlogData = await Blogpost.findByPk(
+      req.params.id,
+      {
+        include: [
+          {
+            model: User,
+            attributes: ['username'],
+          },
+        ]
+      }
+    );
+    const BlogData = dbBlogData.get({ plain: true });
+    console.log(BlogData)
+    res.render('blog', { BlogData, logged_in: req.session.logged_in });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
