@@ -10,6 +10,23 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.post('/', async (req, res) => {
+    try {
+        const dbUserData = await User.create({
+            username: req.body.username,
+            password: req.body.password,
+        });
+
+        req.session.save(() => {
+            req.session.logged_in = true;
+            res.status(200).json(dbUserData);
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
 router.post('/login', async (req, res) => {
     try {
         const userData = await User.findOne({ where: { username: req.body.username } });
