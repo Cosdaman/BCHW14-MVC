@@ -1,7 +1,8 @@
-<section class="card">
-    <h1>Title: {{title}}</h1>
-    <p>Date Created: {{format_date date_created}}</p>
-    <p>Created By: {{'user.username'}}</p>
-    <p>{{content}}</p>
-
-</section>
+<a href="/blog/{{id}}">
+    <section class="card">
+        <h1>Title: {{title}}</h1>
+        <p>Date Created: {{format_date date_created}}</p>
+        <p>Created By: {{'user.username'}}</p>
+        <p>{{content}}</p>
+    </section>
+</a>
