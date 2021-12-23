@@ -51,9 +51,10 @@ router.get('/blog/:id', withAuth, async (req, res) => {
         ]
       }
     );
-    const dbCommentData = await Comments.findAll( { raw: true,
+    const dbCommentData = await Comments.findAll({
+      raw: true,
       where: {
-        Blog_post_id:  req.params.id 
+        Blog_post_id: req.params.id
       },
       include: [
         {
@@ -67,7 +68,7 @@ router.get('/blog/:id', withAuth, async (req, res) => {
     const CommData = dbCommentData
     console.log(BlogData)
     console.log(CommData)
-    res.render('blog', { BlogData, logged_in: req.session.logged_in });
+    res.render('blog', { BlogData, CommData, logged_in: req.session.logged_in });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

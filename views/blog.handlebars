@@ -4,7 +4,9 @@
     <p>Created by: {{BlogData.user.username}} at {{format_date BlogData.date_created}}</p>
 </div>
 <div>
-    {{!-- comment display --}}
+    {{#each CommData as |Comments|}}
+    {{>comment-details}}
+    {{/each}}
 </div>
 <div>
     {{!-- new comment entry --}}
