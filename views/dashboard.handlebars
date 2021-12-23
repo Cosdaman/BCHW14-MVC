@@ -1,4 +1,5 @@
 <div>
-    dashbaord
-    {{!-- blog post for current user --}}
+    {{#each dbBlogData as |UserBlogposts|}}
+    {{>blog-dashboard}}
+    {{/each}}
 </div>
