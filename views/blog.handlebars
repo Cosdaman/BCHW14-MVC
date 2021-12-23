@@ -4,10 +4,11 @@
     <p>Created by: {{BlogData.user.username}} at {{format_date BlogData.date_created}}</p>
 </div>
 <div>
+    <h3>Comments:</h3>
     {{#each CommData as |Comments|}}
     {{>comment-details}}
     {{/each}}
 </div>
 <div>
-    {{!-- new comment entry --}}
+    <h3>Leave a comment:</h3>
 </div>

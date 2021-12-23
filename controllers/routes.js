@@ -66,8 +66,6 @@ router.get('/blog/:id', withAuth, async (req, res) => {
     );
     const BlogData = dbBlogData.get({ plain: true });
     const CommData = dbCommentData
-    console.log(BlogData)
-    console.log(CommData)
     res.render('blog', { BlogData, CommData, logged_in: req.session.logged_in });
   } catch (err) {
     console.log(err);
