@@ -10,5 +10,11 @@
     "content": "test2@test.com",
     "user_id": 1,
     "date_created": "March 30, 2019"
+  },
+  {
+    "title": "test3",
+    "content": "test3@test.com",
+    "user_id": 2,
+    "date_created": "March 30, 2019"
   }
 ]
