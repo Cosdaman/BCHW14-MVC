@@ -2,7 +2,7 @@
 
 ## Description  
 
-This is a tech-blog that features user authentication, password hashing, and database usage.
+This is a tech-blog that features user authentication, password hashing, and database usage. The website is deployed on Heroku, and uses JawsDB MySQL2 as its database.
 
 ## Technologies Used  
 - NodeJS
