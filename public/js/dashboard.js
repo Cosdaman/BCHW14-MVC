@@ -1,3 +1,3 @@
 $("#createNewBlogPost").click(() => {
-    console.log("create new blog post button click")
+    document.location.replace('/dashboard/new');
 })
