@@ -1,16 +1,8 @@
 const { Comments } = require('../../models');
 const router = require('express').Router();
+const withAuth = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
-    try {
-        res.status(200).send('in /api/comments/')
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
-});
-
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const commentData = await Comments.create({
             content: req.body.commentContent,
