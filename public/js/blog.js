@@ -1,9 +1,7 @@
 let commentEl = $('#commentContent');
 
 $('#submitComment').click(async () => {
-    commentContent = commentEl.val().trim();
-    console.log(commentContent)
-    console.log('submit comment button')
+    let commentContent = commentEl.val().trim();
 
     if (commentContent) {
         const response = await fetch('/api/comment', {
@@ -15,7 +13,7 @@ $('#submitComment').click(async () => {
         if (response.ok) {
             document.location.reload();
         } else {
-            alert('Failed to sign up.');
+            alert('failed to add comment');
         }
     }
 })
