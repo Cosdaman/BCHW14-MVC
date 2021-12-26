@@ -2,6 +2,12 @@
     <h1>{{BlogData.title}}</h1>
     <p>{{BlogData.content}}</p>
     <p>Created by: {{BlogData.user.username}} at {{format_date BlogData.date_created}}</p>
+    {{#if author}}
+    <div>
+        <button class="editDashBtn">edit</button>
+        <button class="deleteDashBtn">delete</button>
+    </div>
+    {{/if}}
 </div>
 <div>
     <h3>Comments:</h3>

@@ -39,6 +39,7 @@ router.get('/login', async (req, res) => {
 
 //get single blog page
 router.get('/blog/:id', withAuth, async (req, res) => {
+  let author;
   try {
     const dbBlogData = await Blogpost.findByPk(
       req.params.id,
@@ -67,10 +68,15 @@ router.get('/blog/:id', withAuth, async (req, res) => {
     const BlogData = dbBlogData.get({ plain: true });
     const CommData = dbCommentData
     console.log(BlogData)
+    if (BlogData.user_id == req.session.user_id) {
+      author = true;
+    } else {
+      author = false;
+    }
     req.session.save(() => {
       req.session.blogId = BlogData.id;
     });
-    res.render('blog', { BlogData, CommData, logged_in: req.session.logged_in });
+    res.render('blog', { BlogData, CommData, logged_in: req.session.logged_in, author });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
