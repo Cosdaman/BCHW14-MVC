@@ -2,10 +2,20 @@
 
 ## Description  
 
-
+This is a tech-blog that features user authentication, password hashing, and database usage.
 
 ## Technologies Used  
-
+- NodeJS
+- bcrypt
+- connect-session-sequelize
+- dotenv
+- express
+- handlebars
+- mysql2
+- sequelize
+- HTML
+- CSS
+- Javascript
 
 
 ## Contact Information  
