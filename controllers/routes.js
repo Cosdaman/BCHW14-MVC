@@ -12,6 +12,9 @@ router.get('/', async (req, res) => {
           attributes: ['username'],
         },
       ],
+      order: [
+        ['date_created', 'desc']
+      ]
     });
     res.render('home', {
       dbBlogData,
