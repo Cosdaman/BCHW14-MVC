@@ -24,7 +24,7 @@ router.delete('/:id', function (req, res) {
             where: { id: req.params.id }
         });
         Comments.destroy({
-            where: { blog_post_id: req.params.id}
+            where: { blog_post_id: req.params.id }
         });
         res.status(200).json('deleted');
     } catch (err) {
