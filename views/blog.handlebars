@@ -4,8 +4,8 @@
     <p>Created by: {{BlogData.user.username}} at {{format_date BlogData.date_created}}</p>
     {{#if author}}
     <div>
-        <button class="editDashBtn">edit</button>
-        <button class="deleteDashBtn">delete</button>
+        <button class="editDashBtn" data-id={{BlogData.id}}>edit</button>
+        <button class="deleteDashBtn" data-id={{BlogData.id}}>delete</button>
     </div>
     {{/if}}
 </div>

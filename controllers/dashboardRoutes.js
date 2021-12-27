@@ -16,7 +16,6 @@ router.get('/', withAuth, async (req, res) => {
                 ]
             }
         );
-        console.log(dbBlogData)
         res.render('dashboard', { dbBlogData, logged_in: req.session.logged_in });
     } catch (err) {
         console.log(err);

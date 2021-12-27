@@ -69,8 +69,7 @@ router.get('/blog/:id', withAuth, async (req, res) => {
     }
     );
     const BlogData = dbBlogData.get({ plain: true });
-    const CommData = dbCommentData
-    console.log(BlogData)
+    const CommData = dbCommentData;
     if (BlogData.user_id == req.session.user_id) {
       author = true;
     } else {
