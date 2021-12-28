@@ -19,14 +19,8 @@ $('#submitComment').click(async () => {
 })
 
 $(".editDashBtn").click(async () => {
-    console.log("edit button clicked");
-    let blogID = $(".editDashBtn").data('id');
-    console.log(blogID);
-    const response = await fetch('/api/blog', {
-        method: 'PUT',
-        body: JSON.stringify({}),
-        headers: { 'Content-Type': 'application/json' },
-    });
+    let blogID = $(".editDashBtn").data('id')
+    document.location.replace(`/dashboard/edit/${blogID}`);
 })
 
 $(".deleteDashBtn").click(async () => {

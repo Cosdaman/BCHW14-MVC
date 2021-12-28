@@ -1,11 +1,15 @@
 <div>
     <h1>Blog Title:</h1>
-    <input type="text" id="blogTitle">
+    <input type="text" id="blogTitle" value={{BlogTitle}}>
     <br>
     <h2>Contents:</h2>
-    <textarea id="blogContents"></textarea>
+    <textarea id="blogContents">{{BlogContent}}</textarea>
     <br>
+    {{#if editing}}
+    <button id="editBlog" data-id={{BlogId}}>Edit Post</button>
+    {{else}}
     <button id="createBlog">Create New Post</button>
+    {{/if}}
 </div>
 
 <script src="/js/newBlogPost.js"></script>

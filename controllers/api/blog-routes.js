@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../../utils/auth');
-const Blogpost = require('../../models/Blogpost');
-const { Comments } = require('../../models');
+const { Comments, User, Blogpost } = require('../../models');
 
 router.post('/new', withAuth, async (req, res) => {
     try {
@@ -33,7 +32,8 @@ router.delete('/:id', function (req, res) {
     }
 })
 
-router.put('/:id', function (req, res) {
+router.put('/', function (req, res) {
+    console.log(req.body)
     res.send('Got a PUT request at /user')
 })
 
