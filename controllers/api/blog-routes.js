@@ -32,9 +32,22 @@ router.delete('/:id', function (req, res) {
     }
 })
 
-router.put('/', function (req, res) {
-    console.log(req.body)
-    res.send('Got a PUT request at /user')
+router.put('/:id', function (req, res) {
+    try {
+        Blogpost.update({
+            title: req.body.blogTitle,
+            content: req.body.blogContent,
+
+        }, {
+            where:
+                { id: req.params.id }
+        })
+        res.status(200).json('updated');
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+
 })
 
 module.exports = router;

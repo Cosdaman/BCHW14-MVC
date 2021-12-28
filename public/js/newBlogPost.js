@@ -27,7 +27,7 @@ $('#editBlog').click(async () => {
     let blogContent = blogContentEl.val().trim();
 
     if (blogTitle && blogContent) {
-        const response = await fetch('/api/blog/', {
+        const response = await fetch(`/api/blog/${blogId}`, {
             method: 'PUT',
             body: JSON.stringify({ blogTitle, blogContent }),
             headers: { 'Content-Type': 'application/json' },
