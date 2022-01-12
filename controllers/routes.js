@@ -76,7 +76,7 @@ router.get('/blog/:id', withAuth, async (req, res) => {
       author = false;
     }
     req.session.save(() => {
-      req.session.blogId = BlogData.id;
+      req.session.blogId = req.query.id;
     });
     res.render('blog', { BlogData, CommData, logged_in: req.session.logged_in, author });
   } catch (err) {
