@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
         const userData = await User.findOne({ where: { username: req.body.username } });
 
         req.session.save(() => {
-            req.session.logged_in = false;
+            req.session.logged_in = true;
             req.session.user_id = userData.id;
             res.status(200).json(dbUserData);
         });
