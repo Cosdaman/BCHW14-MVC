@@ -17,8 +17,11 @@ router.post('/', async (req, res) => {
             password: req.body.password,
         });
 
+        const userData = await User.findOne({ where: { username: req.body.username } });
+
         req.session.save(() => {
-            req.session.logged_in = true;
+            req.session.logged_in = false;
+            req.session.user_id = userData.id;
             res.status(200).json(dbUserData);
         });
     } catch (err) {
